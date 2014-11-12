@@ -18,7 +18,6 @@ angular.module( 'ngBoilerplate')
   auth.hookEvents();
 
   $rootScope.$on('$locationChangeStart', function() {
-    console.log(' at $locationChangeStart');
     if (!auth.isAuthenticated) {
       var token = store.get('token');
       if (token) {
