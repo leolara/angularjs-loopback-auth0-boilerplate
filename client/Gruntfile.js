@@ -19,6 +19,8 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-ngmin');
   grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-express');
+  grunt.loadNpmTasks('grunt-loopback-sdk-angular');
+  grunt.loadNpmTasks('grunt-docular');
 
   /**
    * Load in our build configuration file.
@@ -537,6 +539,29 @@ module.exports = function ( grunt ) {
           bases: 'build'
         }
       }
+    },
+    loopback_sdk_angular: {
+      services: {
+        options: {
+          input: '../server/server.js',
+          output: 'vendor/lb-services.js'
+        }
+      }
+    },
+    docular: {
+      groups: [
+        {
+          groupTitle: 'LoopBack',
+          groupId: 'loopback',
+          sections: [
+            {
+              id: 'lbServices',
+              title: 'LoopBack Services',
+              scripts: [ 'vendor/lb-services.js' ]
+            }
+          ]
+        }
+      ]
     }
   };
 
@@ -563,7 +588,7 @@ module.exports = function ( grunt ) {
    * The `build` task gets your app ready to run for development and testing.
    */
   grunt.registerTask( 'build', [
-    'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
+    'clean', 'html2js', 'jshint', 'loopback_sdk_angular', 'docular', 'coffeelint', 'coffee', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
     'copy:build_appjs', 'copy:build_vendorjs', 'index:build'/*, 'karmaconfig',
     'karma:continuous'*/

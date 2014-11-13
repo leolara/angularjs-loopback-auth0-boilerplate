@@ -71,7 +71,9 @@ module.exports = {
       'vendor/auth0-lock/build/auth0-lock.js',
       'vendor/a0-angular-storage/dist/angular-storage.js',
       'vendor/angular-jwt/dist/angular-jwt.js',
-      'vendor/auth0-angular/build/auth0-angular.js'
+      'vendor/auth0-angular/build/auth0-angular.js',
+      'vendor/angular-resource/angular-resource.js',
+      'vendor/lb-services.js'
     ],
     css: [
     ],

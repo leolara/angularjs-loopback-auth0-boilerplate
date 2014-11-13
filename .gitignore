@@ -1,6 +1,8 @@
 node_modules
+data.db
 
 client/vendor
 client/build
 client/node_modules
+client/docular_generated/
 

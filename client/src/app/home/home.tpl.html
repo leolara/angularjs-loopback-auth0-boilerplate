@@ -1,6 +1,8 @@
 <input ng-hide="auth.isAuthenticated" type="submit" ng-click="login()" value="LOGIN" />
 <input ng-show="auth.isAuthenticated" type="submit" ng-click="logout()" value="LOGOUT" />
 
+<input ng-show="auth.isAuthenticated" type="submit" ng-click="createMessage()" value="Create Message" />
+
   <div ng-show="auth.isAuthenticated">
       Your e-mail is {{ auth.profile.email }}
   </div>

@@ -7,7 +7,14 @@
       "./models"
     ]
   },
+  "Message": {
+    "dataSource": "db",
+    "public": true
+  },
   "User": {
+    "dataSource": "db"
+  },
+  "Application": {
     "dataSource": "db"
   },
   "AccessToken": {
